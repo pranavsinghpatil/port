@@ -41,8 +41,8 @@ export function Projects() {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="relative py-20 text-white">
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
         
         <div className="flex justify-center space-x-4 mb-8">

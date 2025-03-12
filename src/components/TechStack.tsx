@@ -114,9 +114,7 @@ export function TechStack() {
                   </p>
                 </div>
               </div>
-              <div className="h-32 overflow-hidden relative">
-                <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#171717] to-transparent pointer-events-none" />
-                
+              <div className="h-32 overflow-hidden">
                 <Marquee
                   speed={40}
                   gradient={false}
@@ -141,8 +139,6 @@ export function TechStack() {
                     ))}
                   </div>
                 </Marquee>
-
-                <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#171717] to-transparent pointer-events-none" />
               </div>
             </div>
           </div>

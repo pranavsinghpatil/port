@@ -26,8 +26,8 @@ const timeline = [
 
 export function Academic() {
   return (
-    <section id="academic" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="relative py-20 text-white">
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-12">
           Academic Journey
         </h2>

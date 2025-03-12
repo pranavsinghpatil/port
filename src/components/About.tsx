@@ -3,8 +3,8 @@ import React from 'react';
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="relative py-20 text-white">
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
         <div className="max-w-4xl mx-auto">
           <div className="prose prose-lg">
