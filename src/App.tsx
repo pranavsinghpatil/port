@@ -14,10 +14,10 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0A0A0A]">
       <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       
-      <main className="pt-16">
+      <main>
         <Hero />
         <About />
         <Projects />
@@ -27,7 +27,7 @@ function App() {
         <Contact />
       </main>
 
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="bg-[#0A0A0A] text-gray-400 py-8 border-t border-gray-800/50">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center space-x-6 mb-4">
             <a href="https://github.com/pranavs-profile" className="hover:text-blue-400 transition-colors">
@@ -40,7 +40,7 @@ function App() {
               <Mail className="w-6 h-6" />
             </a>
           </div>
-          <p className="text-gray-400">© {new Date().getFullYear()} Pranav. All rights reserved.</p>
+          <p className="text-sm">© {new Date().getFullYear()} Pranav. All rights reserved.</p>
         </div>
       </footer>
     </div>

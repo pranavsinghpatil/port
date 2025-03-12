@@ -1,0 +1,57 @@
+.itemGrab {
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: grab;
+}
+
+.itemGrab:active {
+  cursor: grabbing;
+}
+
+.item {
+  border-radius: 24px;
+  background: rgba(23, 23, 23, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.techItem {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.techItem:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Add smooth mask for tech icons */
+.techIconMask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+} 

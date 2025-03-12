@@ -14,6 +14,18 @@
   }
 }
 
+@keyframes tilt {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+}
+
 /* Base styles */
 body {
   @apply antialiased text-gray-800 bg-white;
@@ -22,6 +34,7 @@ body {
 /* Section animations */
 section {
   animation: fadeIn 0.6s ease-out;
+  @apply bg-[#0A0A0A] text-white border-b border-gray-800/50;
 }
 
 /* Typography */
@@ -43,16 +56,19 @@ h3 {
 }
 
 .btn-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
+  @apply px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors
+         text-white font-medium flex items-center gap-2;
 }
 
 .btn-secondary {
-  @apply bg-gray-800 text-white hover:bg-gray-900;
+  @apply px-6 py-3 border border-gray-700 rounded-lg hover:bg-gray-800/50 
+         transition-colors text-gray-300 font-medium;
 }
 
 /* Card styles */
 .card {
-  @apply bg-white rounded-lg shadow-lg overflow-hidden;
+  @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-xl 
+         hover:border-gray-700/50 transition-all duration-300;
 }
 
 .card-body {
@@ -102,4 +118,97 @@ h3 {
 /* Container */
 .container {
   @apply px-4 mx-auto max-w-7xl;
+}
+
+/* Circuit pattern background */
+.bg-circuit-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM38.284 0l7.9 7.9-1.415 1.413-9.9-9.9h3.415zM21.657 0l-7.9 7.9 1.415 1.413 9.9-9.9h-3.415zM3.415 0L13.314 9.9 11.9 11.314l-9.9-9.9h1.414zm53.17 0L46.686 9.9l1.415 1.414 9.9-9.9h-1.414zM53.313 0L41.414 11.9l1.414 1.413L54.727 1.414 53.312 0zM6.687 0L18.586 11.9l-1.414 1.413L5.273 1.414 6.687 0zM38.6 0L25.414 13.187l1.414 1.414L40.014 1.414 38.6 0zM21.4 0l13.187 13.187-1.414 1.414L20.014 1.414 21.4 0zm18.385 0l-7.9 7.9 1.415 1.414 7.9-7.9h-1.414zM20.214 0l7.9 7.9-1.415 1.414-7.9-7.9h1.414zM36.97 0L33.313 3.657l1.414 1.414L40 0h-3.03zm-13.94 0l3.657 3.657-1.414 1.414L20 0h3.03zM0 0l.828.828-1.414 1.414L0 2.828V0zm60 0l-.828.828 1.414 1.414L60 2.828V0zm-46.143 0l3.657 3.657L20 0h-6.143zM46.143 0L42.486 3.657 40 0h6.143zM40 0l-3.657 3.657L40 7.313V0zm20 0l-3.657 3.657L60 7.313V0zm-40 0l3.657 3.657L20 7.313V0zm60 0l3.657 3.657L60 7.313V0z' fill='%234299e1' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Grid pattern background */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.animate-tilt {
+  animation: tilt 10s infinite linear;
+}
+
+/* Add this for the gradient background */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle at center, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 70%);
+}
+
+/* Smooth mask gradient for marquee */
+.marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Optional: Add a subtle animation for the star icon */
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse 2s infinite;
+}
+
+/* Heading styling */
+.section-heading {
+  @apply text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r 
+         from-blue-400 to-purple-600 mb-4;
+}
+
+.section-subheading {
+  @apply text-xl text-gray-400 mb-8;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Neural network grid pattern */
+.bg-neural-pattern {
+  background-image: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%),
+                    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+  background-position: 0 0, 10px 10px, 10px 10px;
+}
+
+/* Data flow animation */
+@keyframes dataFlow {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.data-flow {
+  position: absolute;
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, #3B82F6, transparent);
+  animation: dataFlow 8s linear infinite;
 }
