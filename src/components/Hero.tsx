@@ -2,6 +2,8 @@
 import React, { useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { TechStack } from './TechStack';
+import AnimatedContent from './AnimatedContent'; // Import the AnimatedContent component
+import AboutMe from './AboutMe'; // Import the AboutMe component
 
 export function Hero() {
   useEffect(() => {
@@ -120,7 +122,7 @@ export function Hero() {
       {/* Main content */}
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
         <div className="flex flex-col items-start">
-          {/* Flex container for Avatar and Title */}
+          {/* Flex container for Avatar and Animated Content */}
           <div className="flex items-center mb-4">
             {/* Avatar Container */}
             <div className="relative w-32 h-32 mr-4">
@@ -145,17 +147,8 @@ export function Hero() {
               <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-purple-500/10 rounded-full blur-sm animate-float-delayed" />
             </div>
 
-            {/* Name */}
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-                  Hi, I'm Pranav
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-4 pt-4">
-                Computer Engineering Student | AI/ML Enthusiast
-              </p>
-            </div>
+            {/* Use AnimatedContent component */}
+            <AnimatedContent />
           </div>
 
           {/* Information Paragraph */}
